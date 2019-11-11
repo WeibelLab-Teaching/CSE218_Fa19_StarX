@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/ShakeTest.unity
+    guid: b2a5f6c5aa3c09d4fbc97f38c6237016
   m_configObjects: {}
