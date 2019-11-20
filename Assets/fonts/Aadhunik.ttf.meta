@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5558a7688e6117843bc4dd5397abcdfa
+guid: 537a532bf80d34e73869ea059996c421
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -8,9 +8,9 @@ TrueTypeFontImporter:
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
-  fontName: influence
+  fontName: Aadhunik
   fontNames:
-  - influence
+  - Aadhunik
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
