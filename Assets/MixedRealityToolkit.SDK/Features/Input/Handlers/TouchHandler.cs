@@ -19,16 +19,19 @@ namespace Microsoft.MixedReality.Toolkit.Input
         void IMixedRealityTouchHandler.OnTouchCompleted(HandTrackingInputEventData eventData)
         {
             OnTouchCompleted.Invoke(eventData);
+            Debug.Log("OnTouchCompleted");
         }
 
         void IMixedRealityTouchHandler.OnTouchStarted(HandTrackingInputEventData eventData)
         {
             OnTouchStarted.Invoke(eventData);
+            Debug.Log("OnTouchStarted");
         }
 
         void IMixedRealityTouchHandler.OnTouchUpdated(HandTrackingInputEventData eventData)
         {
             OnTouchUpdated.Invoke(eventData);
+            Debug.Log("OnTouchUpdated");
         }
     }
 }
