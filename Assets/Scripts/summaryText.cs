@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class summaryText : MonoBehaviour
 {
-    public Text timeTaken;
+    public TextMeshPro timeTaken;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +16,6 @@ public class summaryText : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timeTaken.text = "Time taken: " + Timer.textClock.text;
+        timeTaken.text = "TIME TAKEN: " + Timer.textClock.text;
     }
 }
