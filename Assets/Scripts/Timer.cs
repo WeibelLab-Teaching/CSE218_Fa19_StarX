@@ -3,10 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Timer : MonoBehaviour
 {
-    public static Text textClock;
+    public static TextMeshPro textClock;
     float second = 0.0f;
     float minute = 0.0f;
     float hour = 0.0f;
@@ -15,7 +16,7 @@ public class Timer : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        textClock = GetComponent<Text>();
+        textClock = GetComponent<TextMeshPro>();
     }
 
     // Update is called once per frame
