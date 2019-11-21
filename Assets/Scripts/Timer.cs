@@ -4,10 +4,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+// using Microsoft.MixedReality.Toolkit.UI;
 
 public class Timer : MonoBehaviour
 {
     public static TextMeshPro textClock;
+    // public PressableButtonHoloLens2 pause_button;
+    // public PressableButtonHoloLens2 play_button;
     float second = 0.0f;
     float minute = 0.0f;
     float hour = 0.0f;
@@ -47,9 +50,23 @@ public class Timer : MonoBehaviour
         timerOn = b;
     }
 
+    public void toggleTimer() {
+        timerOn = !timerOn;
+    }
+
     string LeadingZero(float n)
     {
         return ((int)n).ToString().PadLeft(2, '0');
     }
+    // public void toggleButton(){
+    //     if(!getTimerOn()){
+    //         play_button.SetActive(true);
+    //         pause_button.SetActive(false);
+    //     }
+    //     else{
+    //         play_button.SetActive(false);
+    //         pause_button.SetActive(true);
 
+    //     }
+//    }
 }
