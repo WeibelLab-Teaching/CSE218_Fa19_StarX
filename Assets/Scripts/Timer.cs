@@ -11,15 +11,21 @@ public class Timer : MonoBehaviour
     public static TextMeshPro textClock;
     // public PressableButtonHoloLens2 pause_button;
     // public PressableButtonHoloLens2 play_button;
-    float second = 0.0f;
-    float minute = 0.0f;
-    float hour = 0.0f;
+    public static float second = 0.0f;
+    public static float minute = 0.0f;
+    public static float hour = 0.0f;
     public bool timerOn = true;
+
+    // void Start()
+    // {
+    //     DontDestroyOnLoad(this.gameObject);
+    // }
 
     // Start is called before the first frame update
     void Awake()
     {
         textClock = GetComponent<TextMeshPro>();
+        DontDestroyOnLoad(this.gameObject);
     }
 
     // Update is called once per frame
