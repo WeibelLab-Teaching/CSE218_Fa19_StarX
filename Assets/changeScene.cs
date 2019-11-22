@@ -12,4 +12,12 @@ public class changeScene : MonoBehaviour
         // Debug.Log(sceneName);
         SceneManager.LoadScene(sceneName);
     }
+
+    public void OnRestarButtonClick()
+    {
+        Timer.second = 0.0f;
+        Timer.minute = 0.0f;
+        Timer.hour = 0.0f;
+        Debug.Log(Timer.second);
+    }
 }
