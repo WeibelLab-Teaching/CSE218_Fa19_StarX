@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -731,7 +731,7 @@ PrefabInstance:
     - target: {fileID: 6180816494796116559, guid: 8e9607bc5dcaf684db874e9b032d5d89,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.23
+      value: 0.12
       objectReference: {fileID: 0}
     - target: {fileID: 6180816494796116559, guid: 8e9607bc5dcaf684db874e9b032d5d89,
         type: 3}
@@ -1794,12 +1794,12 @@ PrefabInstance:
     - target: {fileID: 6180816494276547758, guid: 8e9607bc5dcaf684db874e9b032d5d89,
         type: 3}
       propertyPath: m_Name
-      value: PressableButtonHoloLens2TextOnly4Lines_48x96 (1)
+      value: help
       objectReference: {fileID: 0}
     - target: {fileID: 6180816494796116559, guid: 8e9607bc5dcaf684db874e9b032d5d89,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.19
+      value: -0.23
       objectReference: {fileID: 0}
     - target: {fileID: 6180816494796116559, guid: 8e9607bc5dcaf684db874e9b032d5d89,
         type: 3}
@@ -1995,6 +1995,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3640495471819635213, guid: 8e9607bc5dcaf684db874e9b032d5d89,
         type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3640495471819635213, guid: 8e9607bc5dcaf684db874e9b032d5d89,
+        type: 3}
       propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 204732244}
@@ -2012,6 +2017,31 @@ PrefabInstance:
         type: 3}
       propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: LevelSelection
+      objectReference: {fileID: 0}
+    - target: {fileID: 3640495471819635213, guid: 8e9607bc5dcaf684db874e9b032d5d89,
+        type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3640495471819635213, guid: 8e9607bc5dcaf684db874e9b032d5d89,
+        type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3640495471819635213, guid: 8e9607bc5dcaf684db874e9b032d5d89,
+        type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 204732244}
+    - target: {fileID: 3640495471819635213, guid: 8e9607bc5dcaf684db874e9b032d5d89,
+        type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: hiddenObject
+      objectReference: {fileID: 0}
+    - target: {fileID: 3640495471819635213, guid: 8e9607bc5dcaf684db874e9b032d5d89,
+        type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5860492412441405557, guid: 8e9607bc5dcaf684db874e9b032d5d89,
         type: 3}

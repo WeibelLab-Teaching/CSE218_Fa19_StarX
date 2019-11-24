@@ -4,10 +4,65 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 // using Microsoft.MixedReality.Toolkit.UI;
 
 public class Timer : MonoBehaviour
 {
+    public static TextMeshPro textClock;
+    public static float idealSecond = 10.0f;
+    public static float idealMinute = 0.0f;
+    public static float second = idealSecond;
+    public static float minute = idealMinute;
+    public bool timerOn = true;
+
+    void Awake()
+    {
+        textClock = GetComponent<TextMeshPro>();
+        DontDestroyOnLoad(this.gameObject);
+    }
+
+    void Update()
+    {
+        if (!getTimerOn())
+            return;
+        second -= Time.deltaTime;
+        if (minute < 0)
+        {
+            timerOn = !timerOn;
+            second = 0.0f;
+            minute = 0.0f;
+            SceneManager.LoadScene("Summary");
+        }
+        if (second <0)
+        {
+            minute -= 1.0f;
+            second = 59.0f;
+        }
+
+        textClock.text = LeadingZero(minute) + ':' + LeadingZero(second);
+    }
+
+    public bool getTimerOn()
+    {
+        return timerOn;
+    }
+    public void setTimer(bool b)
+    {
+        timerOn = b;
+    }
+
+    public void toggleTimer()
+    {
+        timerOn = !timerOn;
+    }
+
+    public string LeadingZero(float n)
+    {
+        return ((int)n).ToString().PadLeft(2, '0');
+    }
+
+    /*
     public static TextMeshPro textClock;
     // public PressableButtonHoloLens2 pause_button;
     // public PressableButtonHoloLens2 play_button;
@@ -75,4 +130,5 @@ public class Timer : MonoBehaviour
 
     //     }
 //    }
+*/
 }
