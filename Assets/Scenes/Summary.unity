@@ -775,7 +775,7 @@ PrefabInstance:
     - target: {fileID: 3640495471819635213, guid: 8e9607bc5dcaf684db874e9b032d5d89,
         type: 3}
       propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3640495471819635213, guid: 8e9607bc5dcaf684db874e9b032d5d89,
         type: 3}
@@ -867,6 +867,31 @@ PrefabInstance:
         type: 3}
       propertyPath: Events.Array.data[1].Settings.Array.data[0].Tooltip
       value: Assign an audioclip to play on click
+      objectReference: {fileID: 0}
+    - target: {fileID: 3640495471819635213, guid: 8e9607bc5dcaf684db874e9b032d5d89,
+        type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3640495471819635213, guid: 8e9607bc5dcaf684db874e9b032d5d89,
+        type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3640495471819635213, guid: 8e9607bc5dcaf684db874e9b032d5d89,
+        type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 524457061}
+    - target: {fileID: 3640495471819635213, guid: 8e9607bc5dcaf684db874e9b032d5d89,
+        type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: activate
+      objectReference: {fileID: 0}
+    - target: {fileID: 3640495471819635213, guid: 8e9607bc5dcaf684db874e9b032d5d89,
+        type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5860492412441405557, guid: 8e9607bc5dcaf684db874e9b032d5d89,
         type: 3}
@@ -1258,7 +1283,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'IDEAL TIME: 00:05:00'
+  m_text: 'IDEAL TIME: 00:10'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2424f70bb91be430ca3c19707a1b93b9, type: 2}
   m_sharedMaterial: {fileID: 21905422826667110, guid: 2424f70bb91be430ca3c19707a1b93b9,
@@ -1328,10 +1353,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1143815072}
-    characterCount: 20
+    characterCount: 17
     spriteCount: 0
     spaceCount: 2
-    wordCount: 5
+    wordCount: 4
     linkCount: 0
     lineCount: 1
     pageCount: 1

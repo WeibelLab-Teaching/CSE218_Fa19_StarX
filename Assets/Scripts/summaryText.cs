@@ -16,6 +16,22 @@ public class summaryText : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timeTaken.text = "TIME TAKEN: " + Timer.textClock.text;
+        float overallTime = Timer.idealSecond + Timer.idealMinute * 60;
+        float timeleft = Timer.second + Timer.minute * 60;
+        float TimeUsed = overallTime - timeleft;
+        Debug.Log(overallTime);
+        Debug.Log(timeleft);
+        Debug.Log(TimeUsed);
+        float minuteUsed = TimeUsed / 60;
+        float secondUsed = TimeUsed % 60;
+        Debug.Log(LeadingZero(minuteUsed));
+        Debug.Log(LeadingZero(secondUsed));
+        string text = LeadingZero(minuteUsed) + ':' + LeadingZero(secondUsed);
+        timeTaken.text = "TIME TAKEN: " + text;
+    }
+
+    public string LeadingZero(float n)
+    {
+        return ((int)n).ToString().PadLeft(2, '0');
     }
 }
