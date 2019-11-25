@@ -16,6 +16,10 @@ ModelImporter:
     2100000: matemetal
     2100002: black
     2100004: chrome
+    2100006: boltMat
+    2100008: handleMat
+    2100010: handle1Mat
+    2100012: shieldMat
     2300000: bolt
     2300002: handle
     2300004: handle1
