@@ -1,0 +1,72 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using TMPro;
+
+public class timerController : MonoBehaviour
+{
+    public static TextMeshPro textClock;
+    public static float idealSecond = 10.0f;
+    public static float idealMinute = 0.0f;
+    public static float second = idealSecond;
+    public static float minute = idealMinute;
+    public bool timerOn = true;
+
+    public menuController menuControllerObject;
+
+    void Awake()
+    {
+        textClock = GetComponent<TextMeshPro>();
+        DontDestroyOnLoad(this.gameObject);
+
+        if (menuControllerObject == null)
+        {
+            Debug.LogWarning("menuControllerObject is null, will auto find to assign one");
+            menuControllerObject = FindObjectOfType<menuController>();
+            if (menuControllerObject == null)
+            {
+                Debug.LogError("Cannot Find a menuControllerObject in " + gameObject.name + "!");
+            }
+        }
+    }
+
+    void Update()
+    {
+        if (!getTimerOn())
+            return;
+        second -= Time.deltaTime;
+        if (minute < 0)
+        {
+            timerOn = !timerOn;
+            second = 0.0f;
+            minute = 0.0f;
+            menuControllerObject.setSummaryMenuActive();
+        }
+        if (second < 0)
+        {
+            minute -= 1.0f;
+            second = 59.0f;
+        }
+
+        textClock.text = LeadingZero(minute) + ':' + LeadingZero(second);
+    }
+
+    public bool getTimerOn()
+    {
+        return timerOn;
+    }
+    public void setTimer(bool b)
+    {
+        timerOn = b;
+    }
+
+    public void toggleTimer()
+    {
+        timerOn = !timerOn;
+    }
+
+    public string LeadingZero(float n)
+    {
+        return ((int)n).ToString().PadLeft(2, '0');
+    }
+}
