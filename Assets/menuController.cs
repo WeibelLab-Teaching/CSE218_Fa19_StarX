@@ -7,8 +7,9 @@ public class menuController : MonoBehaviour
 
     public levelController levelControllerObj;
     public GameObject[] MenuObjToControl;
+    public int summaryIndex = 3;
 
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -47,6 +48,11 @@ public class menuController : MonoBehaviour
     public void setMenuActive(int index)
     {
         setMenuActiveBool(index, true);
+    }
+
+    public void setSummaryMenuActive()
+    {
+        setMenuActiveBool(summaryIndex, true);
     }
 
     public void setLevelActive(int index)
