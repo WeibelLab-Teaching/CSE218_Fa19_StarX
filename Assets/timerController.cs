@@ -6,11 +6,11 @@ using TMPro;
 public class timerController : MonoBehaviour
 {
     public static TextMeshPro textClock;
-    public static float idealSecond = 10.0f;
+    public static float idealSecond = 30.0f;
     public static float idealMinute = 0.0f;
     public static float second = idealSecond;
     public static float minute = idealMinute;
-    public bool timerOn = true;
+    public static bool timerOn = true;
 
     public menuController menuControllerObject;
 
@@ -47,6 +47,10 @@ public class timerController : MonoBehaviour
             minute -= 1.0f;
             second = 59.0f;
         }
+        if (textClock == null)
+        {
+            textClock = GetComponent<TextMeshPro>();
+        }
 
         textClock.text = LeadingZero(minute) + ':' + LeadingZero(second);
     }
@@ -57,6 +61,7 @@ public class timerController : MonoBehaviour
     }
     public void setTimer(bool b)
     {
+        Debug.Log("settimer" + b);
         timerOn = b;
     }
 
@@ -68,5 +73,13 @@ public class timerController : MonoBehaviour
     public string LeadingZero(float n)
     {
         return ((int)n).ToString().PadLeft(2, '0');
+    }
+
+    public void OnRestarButtonClick()
+    {
+        Debug.Log("restart");
+        second = idealSecond;
+        minute = idealMinute;
+        // Debug.Log(Timer.second);
     }
 }

@@ -8,16 +8,28 @@ public class summaryText : MonoBehaviour
 {
     public TextMeshPro timeTaken;
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public static bool firstIntoSummary = true;
+    
 
     // Update is called once per frame
     void Update()
     {
-        float overallTime = Timer.idealSecond + Timer.idealMinute * 60;
-        float timeleft = Timer.second + Timer.minute * 60;
+        if (firstIntoSummary)
+        {
+            showlast();
+            firstIntoSummary = false;
+        }
+       
+    }
+
+    public void setFlag()
+    {
+        firstIntoSummary = true;
+    }
+    public void showlast()
+    {
+        float overallTime = timerController.idealSecond + timerController.idealMinute * 60;
+        float timeleft = timerController.second + timerController.minute * 60;
         float TimeUsed = overallTime - timeleft;
         Debug.Log(overallTime);
         Debug.Log(timeleft);
