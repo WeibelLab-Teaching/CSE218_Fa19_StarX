@@ -82,6 +82,8 @@ public class menuController : MonoBehaviour
             gb.SetActive(false);
         }
         MenuObjToControl[index].SetActive(b);
+        Debug.Log(MenuObjToControl[index].name);
+        MenuObjToControl[5].SetActive(b);
     }
 
     public void setLevelActiveBool(int index, bool b)
