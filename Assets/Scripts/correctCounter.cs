@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class summaryText : MonoBehaviour
+public class correctCounter : MonoBehaviour
 {
     public TextMeshPro timeTaken;
     // Start is called before the first frame update
@@ -39,7 +39,7 @@ public class summaryText : MonoBehaviour
         Debug.Log(LeadingZero(minuteUsed));
         Debug.Log(LeadingZero(secondUsed));
         string text = LeadingZero(minuteUsed) + ':' + LeadingZero(secondUsed);
-        timeTaken.text = "CORRECT: " + scoreKeeper.correctCount.ToSTring();
+        timeTaken.text = "CORRECT: " + scoreKeeper.correctCount.ToString();
     }
 
     public string LeadingZero(float n)
