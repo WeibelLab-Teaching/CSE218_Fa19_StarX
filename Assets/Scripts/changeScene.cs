@@ -18,7 +18,7 @@ public class changeScene : MonoBehaviour
     {
         Timer.second = Timer.idealSecond;
         Timer.minute = Timer.idealMinute;
-        Debug.Log(Timer.second);
+        // Debug.Log(Timer.second);
     }
 
     /*
@@ -34,8 +34,8 @@ public class changeScene : MonoBehaviour
     void Update()
     {
         string name = this.gameObject.name;
-        Debug.Log(name);
-        Debug.Log(hidden);
+        // Debug.Log(name);
+        // Debug.Log(hidden);
         if (name == "help")
         {
             if (hidden == false)

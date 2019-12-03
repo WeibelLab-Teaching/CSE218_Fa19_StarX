@@ -31,13 +31,13 @@ public class summaryText : MonoBehaviour
         float overallTime = timerController.idealSecond + timerController.idealMinute * 60;
         float timeleft = timerController.second + timerController.minute * 60;
         float TimeUsed = overallTime - timeleft;
-        Debug.Log(overallTime);
-        Debug.Log(timeleft);
-        Debug.Log(TimeUsed);
+        // Debug.Log(overallTime);
+        // Debug.Log(timeleft);
+        // Debug.Log(TimeUsed);
         float minuteUsed = TimeUsed / 60;
         float secondUsed = TimeUsed % 60;
-        Debug.Log(LeadingZero(minuteUsed));
-        Debug.Log(LeadingZero(secondUsed));
+        // Debug.Log(LeadingZero(minuteUsed));
+        // Debug.Log(LeadingZero(secondUsed));
         string text = LeadingZero(minuteUsed) + ':' + LeadingZero(secondUsed);
         timeTaken.text = "TIME TAKEN: " + text;
     }

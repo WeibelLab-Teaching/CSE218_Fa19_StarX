@@ -61,7 +61,7 @@ public class timerController : MonoBehaviour
     }
     public void setTimer(bool b)
     {
-        Debug.Log("settimer" + b);
+        // Debug.Log("settimer" + b);
         timerOn = b;
     }
 
@@ -77,7 +77,7 @@ public class timerController : MonoBehaviour
 
     public void OnRestarButtonClick()
     {
-        Debug.Log("restart");
+        // Debug.Log("restart");
         second = idealSecond;
         minute = idealMinute;
         // Debug.Log(Timer.second);

@@ -6,42 +6,41 @@ using System.Threading;
 public class scoreKeeper : MonoBehaviour
 {
     // Start is called before the first frame update
-	public static int mistakeCount;
-	public static int correctCount;
-    public AudioClip warningClip;
-    AudioSource source { get { return GetComponent<AudioSource>(); } }
+    public ScoreController controller;
+
     void Start()
     {
-        mistakeCount = 0;
-		correctCount = 0;
+        
+    }
 
+    public void setController(ScoreController sc)
+    {
+        this.controller = sc;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (!controller)
+        {
+            Debug.LogError("This scoreKeeper does not have controller");
+        }
     }
 	
 	public void incMistake(){
-		mistakeCount += 1;
-	}
+        controller.incMistake();
+        playAudio(false);
+    }
 	
 	public void incCorrect(){
-		correctCount += 1;
-	}
-
-    public void playAudioAndHide() {
-        gameObject.AddComponent<AudioSource>();
-        source.clip = warningClip;
-        source.playOnAwake = false;
-        PlaySound();
+        controller.incCorrect();
+        playAudio(true);
     }
 
-    void PlaySound() {
-        source.PlayOneShot(warningClip);
-        Destroy(gameObject, source.clip.length);
+    public void playAudio(bool isCorrect) {
+        controller.playAudioAndHide(isCorrect);
+        this.gameObject.SetActive(false);
     }
-
+   
 }
 

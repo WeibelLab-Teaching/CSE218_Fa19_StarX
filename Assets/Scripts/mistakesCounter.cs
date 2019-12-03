@@ -9,7 +9,22 @@ public class mistakesCounter : MonoBehaviour
     public TextMeshPro timeTaken;
     // Start is called before the first frame update
     public static bool firstIntoSummary = true;
-    
+
+    public ScoreController scoreControl;
+
+    void Start()
+    {
+        if (!scoreControl)
+        {
+            Debug.LogWarning("Does not have a score controller here, will find one");
+            scoreControl = FindObjectOfType<ScoreController>();
+            if (!scoreControl)
+            {
+                Debug.LogError("Cannot find a ScoreController in the scene!");
+            }
+        }
+    }
+
 
     // Update is called once per frame
     void Update()
@@ -39,7 +54,7 @@ public class mistakesCounter : MonoBehaviour
         Debug.Log(LeadingZero(minuteUsed));
         Debug.Log(LeadingZero(secondUsed));
         string text = LeadingZero(minuteUsed) + ':' + LeadingZero(secondUsed);
-        timeTaken.text = "MISTAKES: " + scoreKeeper.mistakeCount.ToString();
+        timeTaken.text = "MISTAKES: " + scoreControl.mistakeCount.ToString();
     }
     public string LeadingZero(float n)
     {

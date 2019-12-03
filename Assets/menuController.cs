@@ -28,8 +28,10 @@ public class menuController : MonoBehaviour
                 Debug.LogError("Cannot Find a levelController in this scene");
             }
         }
+        // Debug.Log("NUMBER " + MenuObjToControl.Length);
         for (int i = 0; i < MenuObjToControl.Length; i++)
         {
+            Debug.Log(i.ToString() + " " + MenuObjToControl[i].name);
             if (MenuObjToControl[i] == null)
             {
                 Debug.LogError("MenuObjToControl list has null object in index " + i);
@@ -72,6 +74,7 @@ public class menuController : MonoBehaviour
 
     public void setMenuActiveBool(int index, bool b)
     {
+        Debug.Log("help info to menu");
         if (MenuObjToControl[index] == null)
         {
             Debug.LogError(gameObject.name + ": Can not setActive on null menu in index " + index);
@@ -82,8 +85,17 @@ public class menuController : MonoBehaviour
             gb.SetActive(false);
         }
         MenuObjToControl[index].SetActive(b);
-        Debug.Log(MenuObjToControl[index].name);
-        MenuObjToControl[5].SetActive(b);
+        for (int i = 0; i < MenuObjToControl.Length; i++)
+        {
+            if (MenuObjToControl[i].name == "warning")
+            {
+                MenuObjToControl[i].SetActive(b);
+                Debug.Log("mark scene name " + MenuObjToControl[i].name);
+                return;
+            }
+        }
+        // test = GameObject.Find("warning");
+        // Debug.Log(test.name);
     }
 
     public void setLevelActiveBool(int index, bool b)
