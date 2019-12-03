@@ -7,10 +7,11 @@ public class timerController : MonoBehaviour
 {
     public static TextMeshPro textClock;
     public static float idealSecond = 30.0f;
-    public static float idealMinute = 0.0f;
+    public static float idealMinute = 1.0f;
     public static float second = idealSecond;
     public static float minute = idealMinute;
     public static bool timerOn = true;
+    public GameObject objectToEnableDisable;
 
     public menuController menuControllerObject;
 
@@ -41,6 +42,9 @@ public class timerController : MonoBehaviour
             second = 0.0f;
             minute = 0.0f;
             menuControllerObject.setSummaryMenuActive();
+            objectToEnableDisable.SetActive(false);
+
+
         }
         if (second < 0)
         {
