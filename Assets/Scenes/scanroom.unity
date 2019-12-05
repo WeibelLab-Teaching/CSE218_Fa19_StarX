@@ -2946,7 +2946,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: a7e5c76bd05779042b79a1c12b2f2351, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a7e5c76bd05779042b79a1c12b2f2351, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9839,6 +9839,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caef8e3af116d4541a44dc70e7565e25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectToEnableDisable: {fileID: 0}
   menuControllerObject: {fileID: 1629346622}
 --- !u!114 &316767104
 MonoBehaviour:
@@ -20343,6 +20344,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6180816493790233948, guid: 8e9607bc5dcaf684db874e9b032d5d89,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6180816494762276866, guid: 8e9607bc5dcaf684db874e9b032d5d89,
         type: 3}
       propertyPath: m_IsActive
@@ -20364,11 +20370,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21905422826667110, guid: 2424f70bb91be430ca3c19707a1b93b9,
         type: 2}
-    - target: {fileID: 6180816493790233948, guid: 8e9607bc5dcaf684db874e9b032d5d89,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e9607bc5dcaf684db874e9b032d5d89, type: 3}
 --- !u!1 &638570578 stripped
@@ -22494,6 +22495,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caef8e3af116d4541a44dc70e7565e25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectToEnableDisable: {fileID: 0}
   menuControllerObject: {fileID: 0}
 --- !u!114 &727429046
 MonoBehaviour:
@@ -28543,11 +28545,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 952339470}
     m_Modifications:
-    - target: {fileID: 2817082550597684457, guid: cab2fee02e78ee94eb110dc9a99f892f,
-        type: 3}
-      propertyPath: m_Name
-      value: CursorMoveArrowsMove
-      objectReference: {fileID: 0}
     - target: {fileID: 2817082550597718217, guid: cab2fee02e78ee94eb110dc9a99f892f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -28612,6 +28609,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 2817082550597684457, guid: cab2fee02e78ee94eb110dc9a99f892f,
+        type: 3}
+      propertyPath: m_Name
+      value: CursorMoveArrowsMove
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cab2fee02e78ee94eb110dc9a99f892f, type: 3}
@@ -34990,6 +34992,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caef8e3af116d4541a44dc70e7565e25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectToEnableDisable: {fileID: 0}
   menuControllerObject: {fileID: 0}
 --- !u!114 &1212207952
 MonoBehaviour:
@@ -45790,18 +45793,18 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 489d0c562c5f9b34283612e808d3bcb6, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
-  Spatialize: 0
+  Spatialize: 1
   SpatializePostEffects: 0
   Priority: 128
-  DopplerLevel: 1
+  DopplerLevel: 0.1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 20
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -56118,6 +56121,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6180816493790233948, guid: 8e9607bc5dcaf684db874e9b032d5d89,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6180816494762276866, guid: 8e9607bc5dcaf684db874e9b032d5d89,
         type: 3}
       propertyPath: m_IsActive
@@ -56139,11 +56147,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21905422826667110, guid: 2424f70bb91be430ca3c19707a1b93b9,
         type: 2}
-    - target: {fileID: 6180816493790233948, guid: 8e9607bc5dcaf684db874e9b032d5d89,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e9607bc5dcaf684db874e9b032d5d89, type: 3}
 --- !u!4 &2007712650 stripped
@@ -56196,6 +56199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caef8e3af116d4541a44dc70e7565e25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectToEnableDisable: {fileID: 0}
   menuControllerObject: {fileID: 0}
 --- !u!114 &2007712656
 MonoBehaviour:

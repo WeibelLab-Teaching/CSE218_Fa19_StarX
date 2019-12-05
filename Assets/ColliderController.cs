@@ -13,6 +13,7 @@ public class ColliderController : MonoBehaviour
     public float magniture;
     public List<Collider> colliderToDetect;
     bool hasNoNullObject = true;
+    bool addedRigid = false;
 
     public AudioClip warningClip;
     AudioSource source { get { return GetComponent<AudioSource>(); } }
@@ -54,12 +55,10 @@ public class ColliderController : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-
+        insideDist();
 
         if (detect)
         {
-            //cameraShake.Shake(1f, .4f);
-            //shaker.ShakeOnce(1.0f, 1.0f, 1.0f, 1.0f);
             detect = false;
         }
     }
@@ -84,4 +83,23 @@ public class ColliderController : MonoBehaviour
         source.PlayOneShot(warningClip);
     }
 
+    private bool insideDist()
+    {
+        var headPosition = Camera.main.transform.position;
+        if ((this.transform.position - headPosition).magnitude < 4)
+        {
+            foreach (Transform child in transform)
+            {
+                var rigid = child.gameObject.AddComponent<Rigidbody>();
+                rigid.useGravity = true;
+            }
+            return true;
+        }
+
+        else
+        {
+            return false;
+        }
+            
+    }
 }
