@@ -10,6 +10,8 @@ public class timerController : MonoBehaviour
     public static float idealMinute = 1.0f;
     public static float second = idealSecond;
     public static float minute = idealMinute;
+
+    public static float prevSecond, prevMinute;
     public static bool timerOn = true;
     public GameObject objectToEnableDisable;
 
@@ -41,10 +43,9 @@ public class timerController : MonoBehaviour
             timerOn = !timerOn;
             second = 0.0f;
             minute = 0.0f;
+            OnRestarButtonClick();
             menuControllerObject.setSummaryMenuActive();
             objectToEnableDisable.SetActive(false);
-
-
         }
         if (second < 0)
         {
@@ -55,8 +56,9 @@ public class timerController : MonoBehaviour
         {
             textClock = GetComponent<TextMeshPro>();
         }
-
+        
         textClock.text = LeadingZero(minute) + ':' + LeadingZero(second);
+        
     }
 
     public bool getTimerOn()
@@ -81,9 +83,14 @@ public class timerController : MonoBehaviour
 
     public void OnRestarButtonClick()
     {
-        // Debug.Log("restart");
+        Debug.Log("restart");
+        //Debug.Log(second + "before");
+        prevSecond = second;
+        prevMinute = minute;
         second = idealSecond;
         minute = idealMinute;
-        // Debug.Log(Timer.second);
+        setTimer(true);
+        Debug.Log(second);
+        Debug.Log(minute);
     }
 }

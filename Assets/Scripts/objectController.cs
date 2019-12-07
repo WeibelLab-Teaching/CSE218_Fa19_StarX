@@ -17,7 +17,7 @@ public class objectController : MonoBehaviour
     void Update()
     {
         // Debug.Log(name);
-        Debug.Log("hidden " + hidden);
+        //Debug.Log("hidden " + hidden);
         if (this.gameObject.name == "intensity")
         {
             if (hidden == false)

@@ -24,24 +24,24 @@ public class ScoreController : MonoBehaviour
         source = this.gameObject.GetComponent<AudioSource>();
         mistakeCount = 0;
         correctCount = 0;
-        foreach (GameObject g in GetComponentsInChildren<GameObject>())
-        {
-            GameObject childGameObject = g.GetComponentInChildren<GameObject>();
-            if (!childGameObject)
-            {
-                continue;
-            }
-            if (childGameObject.CompareTag("safePlace"))
-            {
-                safePlaces.Add(childGameObject);
-                childGameObject.GetComponent<scoreKeeper>().setController(this);
-            }
-            else if (childGameObject.CompareTag("dangerPlace"))
-            {
-                dangerPlaces.Add(childGameObject);
-                childGameObject.GetComponent<scoreKeeper>().setController(this);
-            }
-        }
+        //foreach (GameObject g in GetComponentsInChildren<GameObject>())
+        //{
+        //    GameObject childGameObject = g.GetComponentInChildren<GameObject>();
+        //    if (!childGameObject)
+        //    {
+        //        continue;
+        //    }
+        //    if (childGameObject.CompareTag("safePlace"))
+        //    {
+        //        safePlaces.Add(childGameObject);
+        //        childGameObject.GetComponent<scoreKeeper>().setController(this);
+        //    }
+        //    else if (childGameObject.CompareTag("dangerPlace"))
+        //    {
+        //        dangerPlaces.Add(childGameObject);
+        //        childGameObject.GetComponent<scoreKeeper>().setController(this);
+        //    }
+        //}
 
         foreach (GameObject g in safePlaces)
         {
@@ -51,8 +51,18 @@ public class ScoreController : MonoBehaviour
                 Debug.LogWarning("One safeplace does not have Interactable Script in it!");
                 continue;
             }
+        }
+    }
 
-
+    private void OnEnable()
+    {
+        foreach (GameObject g in safePlaces)
+        {
+            g.SetActive(true);
+        }
+        foreach (GameObject g in dangerPlaces)
+        {
+            g.SetActive(true);
         }
     }
 

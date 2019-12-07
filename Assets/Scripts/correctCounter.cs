@@ -51,8 +51,8 @@ public class correctCounter : MonoBehaviour
         Debug.Log(TimeUsed);
         float minuteUsed = TimeUsed / 60;
         float secondUsed = TimeUsed % 60;
-        Debug.Log(LeadingZero(minuteUsed));
-        Debug.Log(LeadingZero(secondUsed));
+//        Debug.Log(LeadingZero(minuteUsed));
+//        Debug.Log(LeadingZero(secondUsed));
         string text = LeadingZero(minuteUsed) + ':' + LeadingZero(secondUsed);
         timeTaken.text = "CORRECT: " + scoreControl.correctCount.ToString();
     }

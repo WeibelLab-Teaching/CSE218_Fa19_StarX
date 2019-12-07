@@ -29,7 +29,7 @@ public class summaryText : MonoBehaviour
     public void showlast()
     {
         float overallTime = timerController.idealSecond + timerController.idealMinute * 60;
-        float timeleft = timerController.second + timerController.minute * 60;
+        float timeleft = timerController.prevSecond + timerController.prevMinute * 60;
         float TimeUsed = overallTime - timeleft;
         // Debug.Log(overallTime);
         // Debug.Log(timeleft);
