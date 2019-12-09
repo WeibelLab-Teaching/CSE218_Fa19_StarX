@@ -43,7 +43,6 @@ public class timerController : MonoBehaviour
             timerOn = !timerOn;
             second = 0.0f;
             minute = 0.0f;
-            OnRestarButtonClick();
             menuControllerObject.setSummaryMenuActive();
             objectToEnableDisable.SetActive(false);
         }
@@ -84,13 +83,11 @@ public class timerController : MonoBehaviour
     public void OnRestarButtonClick()
     {
         Debug.Log("restart");
-        //Debug.Log(second + "before");
-        prevSecond = second;
-        prevMinute = minute;
         second = idealSecond;
         minute = idealMinute;
         setTimer(true);
-        Debug.Log(second);
+/*        Debug.Log(second);
         Debug.Log(minute);
+*/    
     }
 }
