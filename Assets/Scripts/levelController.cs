@@ -7,7 +7,7 @@ using UnityEngine;
 public class levelController : MonoBehaviour
 {
     public GameObject[] LevelObjToControl;
-
+    int levelSelected;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,8 +33,13 @@ public class levelController : MonoBehaviour
 
     }
 
-    public void setLevelActive(int index, bool b)
+    public void setLevel(int level) {
+        levelSelected = level;
+    }
+
+    public void setLevelActive(bool b)
     {
+        int index = levelSelected;
         if (LevelObjToControl[index] == null)
         {
             Debug.LogError(gameObject.name + ": Can not setActive on null level in index " + index);

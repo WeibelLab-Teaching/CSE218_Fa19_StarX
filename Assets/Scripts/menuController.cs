@@ -57,6 +57,12 @@ public class menuController : MonoBehaviour
         setMenuActiveBool(summaryIndex, true);
     }
 
+
+    public void setLevel(int index)
+    {
+        levelControllerObj.setLevel(index);
+    }
+
     public void setLevelActive(int index)
     {
         setLevelActiveBool(index, true);
@@ -105,7 +111,7 @@ public class menuController : MonoBehaviour
             Debug.LogError(gameObject.name + "does not have a levelControllerObj");
             return;
         }
-        levelControllerObj.setLevelActive(index, b);
+       // levelControllerObj.setLevelActive(index, b);
     }
 
     public void setSubMenuActive(int index, int subIndex, bool b)
