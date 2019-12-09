@@ -7,7 +7,7 @@ using UnityEngine;
 public class levelController : MonoBehaviour
 {
     public GameObject[] LevelObjToControl;
-    int levelSelected;
+    public static int levelSelected;
     // Start is called before the first frame update
     void Start()
     {

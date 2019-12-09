@@ -6,14 +6,35 @@ using TMPro;
 public class timerController : MonoBehaviour
 {
     public static TextMeshPro textClock;
-    public static float idealSecond = 30.0f;
-    public static float idealMinute = 1.0f;
-    public static float second = idealSecond;
-    public static float minute = idealMinute;
+
+    public float idealSecond_low = 30.0f;
+    public float idealMinute_low = 1.0f;
+
+    public float idealSecond_medium = 60.0f;
+    public float idealMinute_medium = 1.0f;
+
+    public float idealSecond_high = 15.0f;
+    public float idealMinute_high = 0.0f;
+
+    public static float idealSecond;
+    public static float idealMinute;
+
+    public static float second;
+    public static float minute;
+
+    public static bool timerFlag = true;
+
+    //public static float idealSecond;
+    //public static float idealMinute;
+
+    //public static float second = idealSecond;
+    //public static float minute = idealMinute;
 
     public static float prevSecond, prevMinute;
     public static bool timerOn = true;
-    public GameObject objectToEnableDisable;
+    public GameObject[] objectsToEnableDisable;
+    public GameObject objectToEnable;
+    // public GameObject objectToEnableDisable;
 
     public menuController menuControllerObject;
 
@@ -37,6 +58,35 @@ public class timerController : MonoBehaviour
     {
         if (!getTimerOn())
             return;
+        if (timerFlag == true)
+        {
+            if (levelController.levelSelected == 3)
+            {
+                idealSecond = idealSecond_high;
+                idealMinute = idealMinute_high;
+            }
+            else if (levelController.levelSelected == 2)
+            {
+                idealSecond = idealSecond_medium;
+                idealMinute = idealMinute_medium;
+            }
+            else if (levelController.levelSelected == 1)
+            {
+                idealSecond = idealSecond_low;
+                idealMinute = idealMinute_low;
+            }
+            else
+            {
+                idealSecond = 30.0f;
+                idealMinute = 0.0f;
+            }
+            second = idealSecond;
+            minute = idealMinute;
+            timerFlag = false;
+        }
+        
+        Debug.Log("timer is " + idealMinute.ToString());
+        Debug.Log("timer is " + idealSecond.ToString());
         second -= Time.deltaTime;
         if (minute < 0)
         {
@@ -44,7 +94,14 @@ public class timerController : MonoBehaviour
             second = 0.0f;
             minute = 0.0f;
             menuControllerObject.setSummaryMenuActive();
-            objectToEnableDisable.SetActive(false);
+            foreach (GameObject gb in objectsToEnableDisable)
+            {
+                gb.SetActive(false);
+            }
+            objectToEnable.SetActive(true);
+            timerFlag = true;
+            ruleManager.flag = true;
+            // objectToEnableDisable.SetActive(false);
         }
         if (second < 0)
         {

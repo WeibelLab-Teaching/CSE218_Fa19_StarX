@@ -38,7 +38,7 @@ public class objectController : MonoBehaviour
                 this.gameObject.SetActive(true);
             }
         }
-        
+       
     }
 
     public void inactivate()
@@ -49,5 +49,17 @@ public class objectController : MonoBehaviour
     public void activate()
     {
         hidden = false;
+    }
+
+    public void setFlagTrue()
+    {
+        ruleManager.flag = true;
+
+    }
+
+    public void setTimerFlagTrue()
+    {
+        timerController.timerFlag = true;
+
     }
 }
