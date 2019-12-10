@@ -9309,12 +9309,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotateAnglePerFrame: {x: 0, y: 0.65, z: 0}
---- !u!1 &653295838 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4348198371889994588, guid: 1791543cb298c9b4280f4e7c64e5c4f7,
-    type: 3}
-  m_PrefabInstance: {fileID: 1200596210}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &661516324
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10940,15 +10934,21 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 927809185}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9cc9eee13a07cdb4ca3ecf988a63f914, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   positionOffset: 0
   dist_limit: 0.5
-  safeNodes:
-  - {fileID: 653295838}
+  safeNodes_low_medium:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  safeNodes_high:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!4 &927809187 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: b92fd49bb69750c4382d2c70bc378252,
