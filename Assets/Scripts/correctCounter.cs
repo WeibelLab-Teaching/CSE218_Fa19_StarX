@@ -43,18 +43,8 @@ public class correctCounter : MonoBehaviour
     }
     public void showlast()
     {
-        float overallTime = timerController.idealSecond + timerController.idealMinute * 60;
-        float timeleft = timerController.second + timerController.minute * 60;
-        float TimeUsed = overallTime - timeleft;
-        Debug.Log(overallTime);
-        Debug.Log(timeleft);
-        Debug.Log(TimeUsed);
-        float minuteUsed = TimeUsed / 60;
-        float secondUsed = TimeUsed % 60;
-//        Debug.Log(LeadingZero(minuteUsed));
-//        Debug.Log(LeadingZero(secondUsed));
-        string text = LeadingZero(minuteUsed) + ':' + LeadingZero(secondUsed);
-        timeTaken.text = "CORRECT: " + scoreControl.correctCount.ToString();
+        Debug.Log("-----------------" + ScoreController.correctCount.ToString());
+        timeTaken.text = "SAFE PLACES COLLECTED: " + ScoreController.correctCount.ToString();
     }
 
     public string LeadingZero(float n)

@@ -9,6 +9,8 @@ TagManager:
   - dangerPlace
   - Ground
   - safeNode
+  - UI
+  - target
   layers:
   - Default
   - TransparentFX

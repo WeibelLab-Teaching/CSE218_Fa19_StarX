@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Video;
 public class objectController : MonoBehaviour
 {
     public static bool hidden = false;
+    public VideoPlayer earthquake;
     // public GameObject ObjToControl;
 
     // Start is called before the first frame update
@@ -61,5 +62,31 @@ public class objectController : MonoBehaviour
     {
         timerController.timerFlag = true;
 
+    }
+
+    public void setGameoverFlagFalse()
+    {
+        timerController.gameoverFlag = false; ;
+
+    }
+
+    public void setTerminateFlagFalse()
+    {
+        terminatManager.terminateFlag = false;
+
+    }
+
+    public void setCounterZero()
+    {
+        correctCounter.firstIntoSummary = true;
+        mistakesCounter.firstIntoSummary = true;
+        ScoreController.correctCount = 0;
+        ScoreController.mistakeCount = 0;
+    }
+
+    public void startAgain()
+    {
+        earthquake.Stop();
+        earthquake.Play();
     }
 }

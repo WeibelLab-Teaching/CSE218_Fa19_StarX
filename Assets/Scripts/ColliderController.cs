@@ -91,7 +91,11 @@ public class ColliderController : MonoBehaviour
             foreach (Transform child in transform)
             {
                 var rigid = child.gameObject.AddComponent<Rigidbody>();
-                rigid.useGravity = true;
+                if (rigid != null)
+                {
+                    rigid.useGravity = true;
+                }
+                
             }
             return true;
         }

@@ -20,6 +20,9 @@ public class videoController_low : MonoBehaviour
     public GameObject[] videoDisable;
     public GameObject[] sceneActive;
 
+    public GameObject exit;
+    public GameObject table;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,21 +41,29 @@ public class videoController_low : MonoBehaviour
         {
             easy.SetActive(false);
             startup.SetActive(true);
+            exit.SetActive(false);
+            table.SetActive(false);
         }
         else if (levelController.levelSelected == 2)
         {
             medium.SetActive(false);
             startup.SetActive(true);
+            exit.SetActive(false);
+            table.SetActive(false);
         }
         else if (levelController.levelSelected == 3)
         {
             high.SetActive(false);
             startup.SetActive(true);
+            exit.SetActive(false);
+            table.SetActive(false);
         }
         else
         {
             easy.SetActive(false);
             startup.SetActive(true);
+            exit.SetActive(false);
+            table.SetActive(false);
         }
 
         if (levelController.levelSelected == 1)
@@ -87,23 +98,38 @@ public class videoController_low : MonoBehaviour
         }
         foreach (GameObject gb in sceneActive)
         {
-            gb.SetActive(true);
+            if (levelController.levelSelected == 3)
+            {
+                if (gb.name != "warning")
+                {
+                    gb.SetActive(true);
+                } else
+                {
+                    gb.SetActive(false);
+                }
+            }
+            else { gb.SetActive(true); }
+            
         }
         if (levelController.levelSelected == 1)
         {
             easy.SetActive(true);
+            exit.SetActive(true);
         }
         else if (levelController.levelSelected == 2)
         {
             medium.SetActive(true);
+            exit.SetActive(true);
         }
         else if (levelController.levelSelected == 3)
         {
             high.SetActive(true);
+            table.SetActive(true);
         }
         else
         {
             easy.SetActive(true);
+            exit.SetActive(true);
         }
     }
 

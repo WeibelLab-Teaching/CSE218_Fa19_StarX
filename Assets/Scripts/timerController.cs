@@ -1,16 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Video;
 using TMPro;
 
 public class timerController : MonoBehaviour
 {
     public static TextMeshPro textClock;
+    public static bool gameoverFlag = false;
 
     public float idealSecond_low = 30.0f;
     public float idealMinute_low = 1.0f;
 
-    public float idealSecond_medium = 60.0f;
+    public float idealSecond_medium = 00.0f;
     public float idealMinute_medium = 1.0f;
 
     public float idealSecond_high = 15.0f;
@@ -23,6 +25,8 @@ public class timerController : MonoBehaviour
     public static float minute;
 
     public static bool timerFlag = true;
+
+
 
     //public static float idealSecond;
     //public static float idealMinute;
@@ -37,6 +41,7 @@ public class timerController : MonoBehaviour
     // public GameObject objectToEnableDisable;
 
     public menuController menuControllerObject;
+    AudioSource source { get { return GetComponent<AudioSource>(); } }
 
     void Awake()
     {
@@ -91,6 +96,8 @@ public class timerController : MonoBehaviour
         second -= Time.deltaTime;
         if (minute < 0)
         {
+            Debug.Log("=======================fail");
+            gameoverFlag = true;
             timerOn = !timerOn;
             second = 0.0f;
             minute = 0.0f;
@@ -102,6 +109,7 @@ public class timerController : MonoBehaviour
             objectToEnable.SetActive(true);
             timerFlag = true;
             ruleManager.flag = true;
+
             // objectToEnableDisable.SetActive(false);
         }
         if (second < 0)
