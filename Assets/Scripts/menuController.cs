@@ -130,4 +130,23 @@ public class menuController : MonoBehaviour
 
         MenuObjToControl[index].GetComponent<menuController>().setMenuActiveBool(subIndex, b);
     }
+
+    public void setMenuActiveBool(string menuName, bool b)
+    {
+        foreach(GameObject obj in MenuObjToControl)
+        {
+            if (!obj)
+            {
+                Debug.LogError("MenuObjToControl has null object");
+            }
+            else if (obj.name.Equals(menuName))
+            {
+                obj.SetActive(b);
+            }
+            else
+            {
+                Debug.LogError("No such menu in MenuObjToControl");
+            }
+        }
+    }
 }

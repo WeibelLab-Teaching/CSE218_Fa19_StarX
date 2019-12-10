@@ -430,6 +430,7 @@ public class AnchorModuleScript : MonoBehaviour
             if (www.isNetworkError || www.isHttpError)
             {
                 Debug.Log(www.error);
+                throw new Exception(www.error);
             }
             else
             {
