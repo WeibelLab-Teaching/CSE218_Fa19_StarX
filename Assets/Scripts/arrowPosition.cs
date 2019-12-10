@@ -9,7 +9,11 @@ public class arrowPosition : MonoBehaviour
     public float positionOffset;
     public float dist_limit;
 
-    public GameObject[] safeNodes = new GameObject[3];
+    public GameObject[] safeNodes_low_medium = new GameObject[3];
+    public GameObject[] safeNodes_high = new GameObject[3];
+
+
+    GameObject[] safeNodes;
     private List<KeyValuePair<int, float>> queue;
 
     void Start()
@@ -27,11 +31,21 @@ public class arrowPosition : MonoBehaviour
 
         var direction = (position - headPosition).normalized;
         gameObject.transform.rotation = Quaternion.LookRotation(direction);
-
     }
 
     Vector3 NearestPosition()
     {
+        if (levelController.levelSelected == 1 || levelController.levelSelected == 2) {
+            safeNodes = safeNodes_low_medium;
+        } else if (levelController.levelSelected == 3)
+        {
+            safeNodes = safeNodes_high;
+        } else
+        {
+            Debug.Log("No level selection");
+            safeNodes = safeNodes_low_medium;
+        }
+
         int i = 0;
         queue = new List<KeyValuePair<int, float>>(3);
         foreach (GameObject child in safeNodes)
@@ -56,7 +70,6 @@ public class arrowPosition : MonoBehaviour
             return safeNodes[index].transform.position;
         }
             
-
         return safeNodes[queue[0].Key].transform.position;
     }
 }
