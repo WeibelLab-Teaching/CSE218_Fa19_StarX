@@ -8,6 +8,9 @@ public class summaryText : MonoBehaviour
     // Start is called before the first frame update
     public static bool firstIntoSummary = true;
 
+    public AudioClip warningClip;
+    AudioSource source { get { return GetComponent<AudioSource>(); } }
+
     // Update is called once per frame
     void Update()
     {
@@ -26,6 +29,10 @@ public class summaryText : MonoBehaviour
     }
     public void showlast()
     {
+        if (timerController.gameoverFlag == true)
+        {
+            playAudio();
+        }
         float overallTime = timerController.idealSecond + timerController.idealMinute * 60;
         float timeleft = timerController.second + timerController.minute * 60;
         float TimeUsed = overallTime - timeleft;
@@ -49,6 +56,19 @@ public class summaryText : MonoBehaviour
     {
         Debug.Log("timer is " + timerController.idealMinute.ToString() + timerController.idealSecond.ToString());
         timeIdeal.text = "IDEAL TIME: " + LeadingZero(timerController.idealMinute) + ':' + LeadingZero(timerController.idealSecond);
+    }
+
+    public void playAudio()
+    {
+        gameObject.AddComponent<AudioSource>();
+        source.clip = warningClip;
+        source.playOnAwake = false;
+        PlaySound();
+    }
+
+    void PlaySound()
+    {
+        source.PlayOneShot(warningClip);
     }
 
 }

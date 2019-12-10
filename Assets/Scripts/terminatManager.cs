@@ -2,18 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-using EZCameraShake;
-
-public class ColliderController : MonoBehaviour
+public class terminatManager : MonoBehaviour
 {
+    // Start is called before the first frame update
     // Start is called before the first frame update
     //public shaketest cameraShake;
     bool detect;
-    public CameraShaker shaker;
-    public float magniture;
     public List<Collider> colliderToDetect;
     bool hasNoNullObject = true;
     bool addedRigid = false;
+
+    public GameObject[] objectInactive;
+    public GameObject[] objectActive;
+
+    public static bool terminateFlag = false;
 
     public AudioClip warningClip;
     AudioSource source { get { return GetComponent<AudioSource>(); } }
@@ -32,31 +34,26 @@ public class ColliderController : MonoBehaviour
             {
                 Debug.LogError("Collider in index " + i + " is null");
                 hasNoNullObject = false;
-            } else
+            }
+            else
             {
-                c.gameObject.AddComponent<CollideTrigger>().setController(this);
-    
+                c.gameObject.AddComponent<terminateTrigger>().setController(this);
+
             }
         }
 
 
-        if (!shaker)
-        {
-            shaker = FindObjectOfType<CameraShaker>();
-            Debug.LogWarning("Did not assigned CameraShaker, find one " + shaker.name);
-            if (!shaker)
-            {
-                Debug.LogError("Can not find a CameraShaker!");
-                hasNoNullObject = false;
-            }
-        }
+        
     }
 
     // Update is called once per frame
     private void Update()
     {
-        insideDist();
-
+        if (terminateFlag == false)
+        {
+            insideDist();
+        }
+        
         if (detect)
         {
             detect = false;
@@ -65,9 +62,6 @@ public class ColliderController : MonoBehaviour
     public void trigerEvent()
     {
         detect = true;
-        playAudio();
-        shaker.ShakeOnce(magniture, 1.0f, 1.0f, 1.0f);
-        Debug.Log("Here");
     }
 
     public void playAudio()
@@ -86,17 +80,26 @@ public class ColliderController : MonoBehaviour
     private bool insideDist()
     {
         var headPosition = Camera.main.transform.position;
-        if ((this.transform.position - headPosition).magnitude < 4)
+        // Debug.Log((this.transform.position - headPosition).magnitude);
+        if ((this.transform.position - headPosition).magnitude < 0.8)
         {
-            foreach (Transform child in transform)
+            terminateFlag = true;
+            playAudio();
+            Debug.Log("Terminate");
+            foreach (GameObject gb in objectInactive)
             {
-                var rigid = child.gameObject.AddComponent<Rigidbody>();
-                if (rigid != null)
-                {
-                    rigid.useGravity = true;
-                }
-                
+                gb.SetActive(false);
             }
+            foreach (GameObject gb in objectActive)
+            {
+                gb.SetActive(true);
+            }
+            timerController.timerOn = !timerController.timerOn;
+            timerController.second = 0.0f;
+            timerController.minute = 0.0f;
+            // menuControllerObject.setSummaryMenuActive();
+            timerController.timerFlag = true;
+            ruleManager.flag = true;
             return true;
         }
 
@@ -104,6 +107,6 @@ public class ColliderController : MonoBehaviour
         {
             return false;
         }
-            
+
     }
 }

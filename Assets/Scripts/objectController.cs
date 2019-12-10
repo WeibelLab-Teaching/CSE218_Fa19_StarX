@@ -62,4 +62,16 @@ public class objectController : MonoBehaviour
         timerController.timerFlag = true;
 
     }
+
+    public void setGameoverFlagFalse()
+    {
+        timerController.gameoverFlag = false; ;
+
+    }
+
+    public void setTerminateFlagFalse()
+    {
+        terminatManager.terminateFlag = false;
+
+    }
 }
