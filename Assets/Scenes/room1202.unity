@@ -16853,8 +16853,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 0.7
-  m_fontSizeBase: 0.7
+  m_fontSize: 0.5
+  m_fontSizeBase: 0.5
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -31700,8 +31700,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 0.7
-  m_fontSizeBase: 0.7
+  m_fontSize: 0.5
+  m_fontSizeBase: 0.5
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -40425,7 +40425,7 @@ PrefabInstance:
     - target: {fileID: 3640495471819635213, guid: 8e9607bc5dcaf684db874e9b032d5d89,
         type: 3}
       propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 16
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 3640495471819635213, guid: 8e9607bc5dcaf684db874e9b032d5d89,
         type: 3}
@@ -40926,6 +40926,36 @@ PrefabInstance:
     - target: {fileID: 3640495471819635213, guid: 8e9607bc5dcaf684db874e9b032d5d89,
         type: 3}
       propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[15].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3640495471819635213, guid: 8e9607bc5dcaf684db874e9b032d5d89,
+        type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[16].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3640495471819635213, guid: 8e9607bc5dcaf684db874e9b032d5d89,
+        type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[16].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3640495471819635213, guid: 8e9607bc5dcaf684db874e9b032d5d89,
+        type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[16].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3640495471819635213, guid: 8e9607bc5dcaf684db874e9b032d5d89,
+        type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[16].m_Target
+      value: 
+      objectReference: {fileID: 1212207962}
+    - target: {fileID: 3640495471819635213, guid: 8e9607bc5dcaf684db874e9b032d5d89,
+        type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[16].m_MethodName
+      value: setCounterZero
+      objectReference: {fileID: 0}
+    - target: {fileID: 3640495471819635213, guid: 8e9607bc5dcaf684db874e9b032d5d89,
+        type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[16].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5860492412441405557, guid: 8e9607bc5dcaf684db874e9b032d5d89,
@@ -44865,8 +44895,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 0.7
-  m_fontSizeBase: 0.7
+  m_fontSize: 0.5
+  m_fontSizeBase: 0.5
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -51339,8 +51369,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d10e450756a20e41bd7869b69f71765, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mistakeCount: 0
-  correctCount: 0
   warningClip: {fileID: 8300000, guid: 577a50794a9a1f748b4c713909a899b8, type: 3}
   safeClip: {fileID: 8300000, guid: 864a2b092d84d4f45b44cad0dfda25d2, type: 3}
   source: {fileID: 0}
@@ -65370,8 +65398,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 0.7
-  m_fontSizeBase: 0.7
+  m_fontSize: 0.5
+  m_fontSizeBase: 0.5
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

@@ -74,4 +74,12 @@ public class objectController : MonoBehaviour
         terminatManager.terminateFlag = false;
 
     }
+
+    public void setCounterZero()
+    {
+        correctCounter.firstIntoSummary = true;
+        mistakesCounter.firstIntoSummary = true;
+        ScoreController.correctCount = 0;
+        ScoreController.mistakeCount = 0;
+    }
 }

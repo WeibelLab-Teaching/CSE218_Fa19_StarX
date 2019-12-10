@@ -98,7 +98,18 @@ public class videoController_low : MonoBehaviour
         }
         foreach (GameObject gb in sceneActive)
         {
-            gb.SetActive(true);
+            if (levelController.levelSelected == 3)
+            {
+                if (gb.name != "warning")
+                {
+                    gb.SetActive(true);
+                } else
+                {
+                    gb.SetActive(false);
+                }
+            }
+            else { gb.SetActive(true); }
+            
         }
         if (levelController.levelSelected == 1)
         {

@@ -8,8 +8,8 @@ using Microsoft.MixedReality.Toolkit.UI;
 public class ScoreController : MonoBehaviour
 {
     // Start is called before the first frame update
-    public int mistakeCount;
-    public int correctCount;
+    public static int mistakeCount;
+    public static int correctCount;
     public AudioClip warningClip;
     public AudioClip safeClip;
 
@@ -75,11 +75,13 @@ public class ScoreController : MonoBehaviour
     public void incMistake()
     {
         mistakeCount += 1;
+        Debug.Log("mistakeCount is " + mistakeCount.ToString());
     }
 
     public void incCorrect()
     {
         correctCount += 1;
+        Debug.Log("mistakeCount is " + correctCount.ToString());
     }
 
     public void playAudioAndHide(bool isCorrect)
