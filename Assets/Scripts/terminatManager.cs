@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Video;
 
 public class terminatManager : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class terminatManager : MonoBehaviour
     public List<Collider> colliderToDetect;
     bool hasNoNullObject = true;
     bool addedRigid = false;
+
+    public VideoPlayer earthquake;
 
     public GameObject[] objectInactive;
     public GameObject[] objectActive;
@@ -81,7 +84,7 @@ public class terminatManager : MonoBehaviour
     {
         var headPosition = Camera.main.transform.position;
         // Debug.Log((this.transform.position - headPosition).magnitude);
-        if ((this.transform.position - headPosition).magnitude < 0.8)
+        if ((this.transform.position - headPosition).magnitude < 1)
         {
             terminateFlag = true;
             playAudio();
@@ -100,6 +103,7 @@ public class terminatManager : MonoBehaviour
             // menuControllerObject.setSummaryMenuActive();
             timerController.timerFlag = true;
             ruleManager.flag = true;
+            earthquake.Play();
             return true;
         }
 

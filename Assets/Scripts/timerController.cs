@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Video;
 using TMPro;
 
 public class timerController : MonoBehaviour
@@ -24,6 +25,8 @@ public class timerController : MonoBehaviour
     public static float minute;
 
     public static bool timerFlag = true;
+
+
 
     //public static float idealSecond;
     //public static float idealMinute;
@@ -106,6 +109,7 @@ public class timerController : MonoBehaviour
             objectToEnable.SetActive(true);
             timerFlag = true;
             ruleManager.flag = true;
+
             // objectToEnableDisable.SetActive(false);
         }
         if (second < 0)

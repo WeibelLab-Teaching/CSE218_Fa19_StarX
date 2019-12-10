@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using TMPro;
+using UnityEngine.Video;
 
 public class summaryText : MonoBehaviour
 {
@@ -7,6 +8,7 @@ public class summaryText : MonoBehaviour
     public TextMeshPro timeIdeal;
     // Start is called before the first frame update
     public static bool firstIntoSummary = true;
+    public VideoPlayer earthquake;
 
     public AudioClip warningClip;
     AudioSource source { get { return GetComponent<AudioSource>(); } }
@@ -45,6 +47,8 @@ public class summaryText : MonoBehaviour
         // Debug.Log(LeadingZero(secondUsed));
         string text = LeadingZero(minuteUsed) + ':' + LeadingZero(secondUsed);
         timeTaken.text = "TIME TAKEN: " + text;
+
+        earthquake.Play();
     }
 
     public string LeadingZero(float n)
