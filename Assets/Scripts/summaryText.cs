@@ -4,9 +4,9 @@ using TMPro;
 public class summaryText : MonoBehaviour
 {
     public TextMeshPro timeTaken;
+    public TextMeshPro timeIdeal;
     // Start is called before the first frame update
     public static bool firstIntoSummary = true;
-    
 
     // Update is called once per frame
     void Update()
@@ -14,6 +14,7 @@ public class summaryText : MonoBehaviour
         if (firstIntoSummary)
         {
             showlast();
+            showIdeal();
             firstIntoSummary = false;
         }
        
@@ -43,4 +44,11 @@ public class summaryText : MonoBehaviour
     {
         return ((int)n).ToString().PadLeft(2, '0');
     }
+
+    void showIdeal()
+    {
+        Debug.Log("timer is " + timerController.idealMinute.ToString() + timerController.idealSecond.ToString());
+        timeIdeal.text = "IDEAL TIME: " + LeadingZero(timerController.idealMinute) + ':' + LeadingZero(timerController.idealSecond);
+    }
+
 }

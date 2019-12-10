@@ -83,10 +83,11 @@ public class timerController : MonoBehaviour
             second = idealSecond;
             minute = idealMinute;
             timerFlag = false;
+            Debug.Log("timer is " + idealMinute.ToString());
+            Debug.Log("timer is " + idealSecond.ToString());
         }
         
-        Debug.Log("timer is " + idealMinute.ToString());
-        Debug.Log("timer is " + idealSecond.ToString());
+        
         second -= Time.deltaTime;
         if (minute < 0)
         {
@@ -112,8 +113,11 @@ public class timerController : MonoBehaviour
         {
             textClock = GetComponent<TextMeshPro>();
         }
-        
-        textClock.text = LeadingZero(minute) + ':' + LeadingZero(second);
+        else
+        {
+            textClock.text = LeadingZero(minute) + ':' + LeadingZero(second);
+        }
+        // textClock.text = LeadingZero(minute) + ':' + LeadingZero(second);
         
     }
 
