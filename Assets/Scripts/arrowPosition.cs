@@ -60,13 +60,16 @@ public class arrowPosition : MonoBehaviour
 
         if (-queue[0].Value < dist_limit*dist_limit)
         {
-            int index;
-            if (queue[1].Key < queue[2].Key)
+            int index = 0;
+            if (queue.Count>1)
             {
-                index = queue[1].Key;
+                if (queue[1].Key < queue[2].Key)
+                {
+                    index = queue[1].Key;
+                }
+                else
+                    index = queue[2].Key;
             }
-            else
-                index = queue[2].Key;
             return safeNodes[index].transform.position;
         }
             
