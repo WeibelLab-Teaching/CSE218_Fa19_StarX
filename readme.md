@@ -1,6 +1,6 @@
 # shakAR
 AR app to improve earth quake drill
-![poster](https://github.com/WeibelLab-Teaching/CSE218_Fa19_StarX/blob/UItest/poster.png)
+![poster](https://github.com/WeibelLab-Teaching/CSE218_Fa19_StarX/blob/UItest/readme_pics/poster.png)
 
 # Motivation
 According to NEIC(National Earthquake Information Center, USA), there are 12,000–14,000 earthquakes each year and magnitude 2 or lighter earthquakes occur several hundred times a day worldwide. Major earthquakes(greater than magnitude 7), happen more than once per month and we all know how life threatening and devastating they can be. For instance, magnitude 7.9 earthquake struck eastern China in 2008 resulting in over 87,500 deaths, earth quake that caused the famous San Adreas fault in SF that resulted in $6B property loss in 1980s (in future it could kill and displace several thousands). Earthquakes are inevitable, all we could do is be better prepared to handle them. 
