@@ -79,6 +79,10 @@ shakAR aims to provide realistic AR earthquake drills using spatial understandin
 -->
 
 # System Development: Architecture
+Below is image of system architecture
+![system arch1](https://github.com/WeibelLab-Teaching/CSE218_Fa19_StarX/blob/UItest/readme_pics/system_arch1.png)
+![system arch2](https://github.com/WeibelLab-Teaching/CSE218_Fa19_StarX/blob/UItest/readme_pics/system_arch2.png)
+
 # System Development: Technology
 ### Device
 HoloLens Version 1
